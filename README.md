@@ -6,16 +6,25 @@ natively (Python venv + systemd, no Docker).
 
 ## Install
 
-Copy `unifi-toolkit-ct.sh` to the Proxmox host, then as root:
+In the Proxmox host shell (as root), run:
 
 ```bash
-bash unifi-toolkit-ct.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/mcintosh109/proxmox-unifi-toolkit/main/unifi-toolkit-ct.sh)
 ```
 
 Answer the prompts (Enter accepts the default). Non-interactive example:
 
 ```bash
-CTID=210 IP=192.168.1.50/24 GATEWAY=192.168.1.1 NONINTERACTIVE=1 bash unifi-toolkit-ct.sh
+CTID=210 IP=192.168.1.50/24 GATEWAY=192.168.1.1 NONINTERACTIVE=1 \
+  bash <(curl -fsSL https://raw.githubusercontent.com/mcintosh109/proxmox-unifi-toolkit/main/unifi-toolkit-ct.sh)
+```
+
+Prefer to read it first? Download, review, then run:
+
+```bash
+curl -fsSLO https://raw.githubusercontent.com/mcintosh109/proxmox-unifi-toolkit/main/unifi-toolkit-ct.sh
+less unifi-toolkit-ct.sh
+bash unifi-toolkit-ct.sh
 ```
 
 | Variable | Default | Notes |
